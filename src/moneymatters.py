@@ -1,6 +1,5 @@
 import streamlit as st
-from millify import millify
-from millify import prettify
+
 
 def calculated_compounded_return(principal, exp_return, tenor, compounded):
     amount = principal*(pow((1+exp_return/compounded),compounded*tenor))
@@ -37,7 +36,7 @@ with tab1:
    st.caption(tenor)
    amount = calculated_compounded_return(principal, exp_return, tenor, 1)
    st.write("By the year",born + retirement_age,"you will have amount" )
-   st.subheader(prettify(int(amount),   separator="'"))
+   st.subheader(int(amount))
 
 
 st.divider()
